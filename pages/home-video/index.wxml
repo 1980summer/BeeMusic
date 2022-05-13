@@ -1,21 +1,8 @@
 <!--pages/home-video/index.wxml-->
-<wxs src="../../utils/format.wxs" module="format"></wxs>
-<view class="video">
-	<!-- 这个key的id是item里的id -->
-	<block wx:for="{{topMVs}}" wx:key="id">
-		<view class="item">
-			<view class="album">
-				<!-- mode="widthFix" 根据图片高度修复图片比例，不使用组件默认高度-->
-				<image class="image" src="{{item.cover}}" mode="widthFix"></image>
-				<view class="info">
-					<view class="count">{{format.formatCount(item.playCount)}}</view>
-					<view class="duration">{{format.formatDuration(item.mv.videos[0].duration)}}</view>
-				</view>
-			</view>
-			<view class="content">
-				{{item.name}} - {{item.artistName}}
-			</view>
-		</view>
 
-	</block>
+<view class="video">
+    <!-- 这个key的id是item里的id -->
+    <view class="item" wx:for="{{topMVs}}" wx:key="id">
+        <video-item-v1 item="{{item}}"></video-item-v1>
+    </view>
 </view>

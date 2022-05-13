@@ -16,6 +16,7 @@ Page({
     onLoad: async function (options) {
         const res = await getTopMVs(0)
         this.setData({ topMVs: res.data })
+        // console.log(res)
 
     }
 })
