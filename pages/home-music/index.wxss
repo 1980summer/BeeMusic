@@ -1,4 +1,15 @@
 /* pages/home-page/index.wxss */
+/* 搜索框样式 */
 .van-search__content {
   background-color: #fff !important;
+}
+
+/* 轮播图样式 */
+.swiper {
+}
+
+.swiper-item {
+}
+.swiper-item .swiper-image {
+  width: 100%;
 }
