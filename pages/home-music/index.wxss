@@ -1,11 +1,23 @@
 /* pages/home-page/index.wxss */
+page {
+  padding: 0 20rpx;
+}
 /* 搜索框样式 */
+.van-search {
+  padding: 10px 0 !important;
+}
+
 .van-search__content {
   background-color: #fff !important;
 }
 
 /* 轮播图样式 */
 .swiper {
+  border-radius: 10rpx;
+  /* 只有设置overflow: hidden;隐藏超出部分，才能显示圆角 */
+  overflow: hidden;
+  /* 解决真机上不能显示圆角的bug */
+  transform: translateY(0);
 }
 
 .swiper-item {
