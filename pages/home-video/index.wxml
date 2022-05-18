@@ -3,6 +3,9 @@
 <view class="video">
     <!-- 这个key的id是item里的id -->
     <view class="item" wx:for="{{topMVs}}" wx:key="id">
-        <video-item-v1 item="{{item}}"></video-item-v1>
+        <video-item-v1 
+                        item="{{item}}" bindtap="handleVideoItemClick"
+                        data-item='{{item}}'>
+        </video-item-v1>
     </view>
 </view>
