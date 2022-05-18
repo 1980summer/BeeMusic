@@ -1,2 +1,3 @@
 <!--pages/home-page/index.wxml-->
-<text>hhhhhh</text>
+<view>Home</view>
+<van-search />
