@@ -15,11 +15,15 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        // 1 获取传入的 id
         const id = options.id
+        // 2 获取页面的数据
+        this.getPageData(id)
+        // 3 其他逻辑
 
     },
-    // 
-    getPageData() {
+    // 封装一个获取页面数据的方法
+    getPageData: function (id) {
         // 1 请求播放地址
         getMVURL(id).then(res => {
             this.setData({ mvURLInfo: res.data })
