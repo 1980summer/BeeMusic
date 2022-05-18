@@ -1,2 +1,5 @@
 /**app.wxss**/
-
+/* 给所有页面做样式 */
+page {
+  background-color: #fafafa;
+}
