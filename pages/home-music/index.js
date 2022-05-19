@@ -2,7 +2,7 @@
 import { getBanners } from "../../service/api_music"
 import queryRect from '../../utils/query-rect'
 import throttle from '../../utils/throttle'
-import { rankingStore } from '../../store/ranking-store'
+import { rankingStore } from '../../store/index'
 
 // 把查询的函数放到节流函数里，生成一个新函数
 const throttleQueryRect = throttle(queryRect)
