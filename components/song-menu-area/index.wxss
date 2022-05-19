@@ -1,0 +1,17 @@
+/* components/song-menu-area/index.wxss */
+.menu-list {
+  width: 100vw;
+  /* 为了可以左右滚动，设置元素不换行 */
+  white-space: nowrap;
+  position: relative;
+  left: -20rpx;
+}
+
+.menu-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 200rpx;
+  height: 200rpx;
+  background: red;
+  margin-left: 20rpx;
+}

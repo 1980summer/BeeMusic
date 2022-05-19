@@ -1,0 +1,11 @@
+<!--components/song-menu-area/index.wxml-->
+<area-header title="热门歌单"></area-header>
+
+<!-- scroll-view是原生组件 scroll-x表示左右滑动 -->
+
+<scroll-view scroll-x class="menu-list">
+<!-- *this表示遍历出来的这6个数字 -->
+     <block wx:for="{{6}}" wx:key="*this">
+        <view class="menu-item"></view>
+     </block>
+</scroll-view>
