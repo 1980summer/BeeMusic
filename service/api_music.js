@@ -4,3 +4,9 @@ export function getBanners() {
         type: 2
     })
 }
+
+export function getRanking(idx) {
+    return beeRequest.get("/top/list", {
+        idx
+    })
+}
