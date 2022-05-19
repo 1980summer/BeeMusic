@@ -8,9 +8,13 @@ Component({
             type: String,
             value: "默认标题"
         },
-        rigthText: {
+        rightText: {
             type: String,
             value: "更多"
+        },
+        showRight: {
+            type: Boolean,
+            value: true
         }
 
     },
