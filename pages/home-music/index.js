@@ -16,8 +16,8 @@ Page({
         banners: [],
         hotSongMenu: [],
         recommendSongMenu: [],
-
-        recommendSongs: []
+        recommendSongs: [],
+        rankings: { 0: {}, 2: {}, 3: {} }
     },
 
 
@@ -35,6 +35,10 @@ Page({
             // 或者简写： this.setData({ recommendSongs })
 
         })
+        rankingStore.onState("newRanking", this.getRankingHandler(0))
+        rankingStore.onState("originRanking", this.getRankingHandler(2))
+        rankingStore.onState("upRanking", this.getRankingHandler(3))
+
     },
     // 网络请求
     getPageData: function () {
@@ -72,5 +76,21 @@ Page({
 
     },
 
+    getRankingHandler: function (idx) {
+        // 高阶函数：函数本身又返回一个函数， 可以避免重复逻辑
+        return (res) => {
+            if (Object.keys(res).length === 0) return
+            const name = res.name
+            const coverImgUrl = res.coverImgUrl
+            const songList = res.tracks.slice(0, 3)
+            const rankingObj = { name, coverImgUrl, songList }
+            const newRankings = { ...this.data.rankings, [idx]: rankingObj } // 浅拷贝
+            this.setData({
+                rankings: newRankings
+            })
+            // console.log(this.data.rankings)
+        }
+
+    }
 
 })

@@ -17,29 +17,8 @@ const rankingStore = new HYEventStore({
                 getRanking(i).then(res => {
                     const rankingName = rankingMap[i]
                     ctx[rankingName] = res.playlist
-
-                    // switch (i) {
-                    //     case 0:
-                    //         // console.log("新歌榜", res)
-                    //         ctx.newRanking = res.playsist
-                    //         break;
-                    //     case 1:
-                    //         // console.log("热歌榜", res)
-                    //         ctx.hotRanking = res.playsist
-                    //         break;
-                    //     case 2:
-                    //         // console.log("原创榜", res)
-                    //         ctx.originRanking = res.playsist
-                    //         break;
-                    //     case 3:
-                    //         // console.log("飙升榜", res)
-                    //         ctx.upRanking = res.playsist
-                    //         break;
-
-                    // }
                 })
             }
-
         }
     }
 })
