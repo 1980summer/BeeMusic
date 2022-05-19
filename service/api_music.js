@@ -10,3 +10,11 @@ export function getRanking(idx) {
         idx
     })
 }
+
+export function getSongMenu(cat = "全部", limit = 6, offset = 0) {
+    return beeRequest.get("/top/playlist", {
+        cat,
+        limit,
+        offset
+    })
+}
