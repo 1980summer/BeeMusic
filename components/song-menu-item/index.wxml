@@ -7,4 +7,4 @@
     </view>
 
     <view class="bottom">{{item.name}}</view>
-</view>
+</view> 
