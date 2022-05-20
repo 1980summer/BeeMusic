@@ -75,11 +75,12 @@ Page({
     },
     handleRankingItemClick: function (event) {
         const idx = event.currentTarget.dataset.idx
-        const rankingName = rankingMap[idx]
-        this.navigateToDetailSongPage(rankingName)
+        const theRankingName = rankingMap[idx]
+        this.navigateToDetailSongPage(theRankingName)
     },
     navigateToDetailSongPage: function (rankingName) {
         wx.navigateTo({
+            // 带着参数传到新页面去
             url: `/pages/detail-songs/index?ranking=${rankingName}`,
         })
     },
