@@ -1,2 +1,6 @@
 <!--pages/music-player/index.wxml-->
-<text>pages/music-player/index.wxml</text>
+<!-- 1 背景 -->
+<image class="bg-image" mode="aspectFill" src="{{currentSong.al.picUrl}}"></image>
+<view class="bg-cover"></view>
+<!-- 让导航变成自定义，如果在没有导航的状态下，view就会从手机左上角开始布局 -->
+<view>你好你好你好</view>
