@@ -1,7 +1,16 @@
 /**app.wxss**/
 /* 给所有页面做样式 */
 page {
-  background-color: #fafafa;
-  /* 需要设置boxsizing才能使两边都有间距 */
-  box-sizing: border-box;
+    background-color: #fafafa;
+    /* 需要设置boxsizing才能使两边都有间距 */
+    box-sizing: border-box;
+}
+
+/* 搜索框样式 */
+.van-search {
+    padding: 10px 0 !important;
+}
+
+.van-search__content {
+    background-color: #fff !important;
 }
