@@ -1,23 +1,27 @@
 <!--pages/detail-search/index.wxml-->
 <!-- 1 搜索框的开发 -->
-<van-search background="#f7f7f7" shape="round" bind:change="handleSearchChange" value="{{searchValue}}"></van-search>
+<!-- bind:search 监听搜索 -->
+<van-search background="#f7f7f7" shape="round" bind:change="handleSearchChange" value="{{searchValue}}" bind:search="handleSearchAction"></van-search>
 
 <!-- 2 热门搜索 -->
 <view class="hot" wx:if="{{!searchValue.length && !suggestSongs.length}}">
     <area-header title="热门搜索" showRight="{{false}}"></area-header>
     <view class="list">
         <block wx:for="{{hotKeyWords}}" wx:key="first">
-            <view class="tag">{{item.first}}</view>
+            <view class="tag" bindtap="handleTagItemClick" data-keyword="{{item.first}}">{{item.first}}</view>
         </block>
     </view>
 </view>
 
 <!-- 3 建议搜索 -->
-<view class="suggest" wx:else="">
+<!-- 什么时候显示？suggestSongs有值的情况下并且没有搜索值的情况下再显示 -->
+<view class="suggest" wx:elif="{{suggestSongs.length && !resultSongs.length}}">
     <view class="title">搜索“{{searchValue}}”</view>
     <view class="list">
         <block wx:for="{{suggestSongsNodes}}" wx:key="keyword">
-            <view class="item">
+            <!-- bindtap监听是否被点击 -->
+            <!-- data- 可以把数据传过去 -->
+            <view class="item" bindtap="handleSuggestItemClick" data-index="{{index}}">
                 <image class="icon" mode="widthFix" src="/assets/images/icons/search_icon.png"></image>
                 <!-- <text class="text">{{item.keyword}}</text> -->
                 <rich-text nodes="{{item}}"></rich-text>

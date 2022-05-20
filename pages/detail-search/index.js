@@ -1,5 +1,5 @@
 // pages/detail-search/index.js
-import { getSearchHot, getSearchSuggest } from '../../service/api-search'
+import { getSearchHot, getSearchSuggest, getSearchResult } from '../../service/api-search'
 // 导出时如果写的时 export default 就不用写花括号
 import debounce from '../../utils/debounce'
 import stringToNodes from '../../utils/string2nodes'
@@ -11,7 +11,9 @@ Page({
         hotKeyWords: [],
         suggestSongs: [],
         searchValue: "",
-        suggestSongsNodes: []
+        suggestSongsNodes: [],
+        resultSongs: []
+
     },
     onLoad(options) {
         // 1 获取页面的数据
@@ -55,5 +57,31 @@ Page({
             this.setData({ suggestSongsNodes })
         })
 
+    },
+    // A 点击搜索框发送请求  
+    handleSearchAction: function () {
+        // 获取搜索框里的字, 根据这个关键字发送网络请求
+        const searchValue = this.data.searchValue
+        getSearchResult(searchValue).then(res => {
+            this.setData({ resultSongs: res.result.songs })
+        })
+    },
+    // B 点击搜索建议发送请求
+    handleSuggestItemClick: function (event) { // event 包含传过来的 index
+        const index = event.currentTarget.dataset.index
+        // 1 通过 index 拿到关键字
+        const keyword = this.data.suggestSongs[index].keyword
+        // 2 将关键字放到搜索框中
+        this.setData({ searchValue: keyword })
+        // 3 发送网络请求
+        this.handleSearchAction()
+    },
+
+    // C 点击热门搜索发送请求
+    handleTagItemClick: function (event) {
+        const keyword = event.currentTarget.dataset.keyword
+        this.setData({ searchValue: keyword })
+        this.handleSearchAction()
     }
+
 })
