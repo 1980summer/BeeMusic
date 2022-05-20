@@ -2,14 +2,12 @@
 import { getBanners, getSongMenu } from "../../service/api_music"
 import queryRect from '../../utils/query-rect'
 import throttle from '../../utils/throttle'
-import { rankingStore } from '../../store/index'
+import { rankingStore, rankingMap } from '../../store/index'
 
 // 把查询的函数放到节流函数里，生成一个新函数
 const throttleQueryRect = throttle(queryRect)
 
 Page({
-
-
 
     data: {
         swiperHeight: 0,
@@ -69,6 +67,20 @@ Page({
         throttleQueryRect(".swiper-image").then(res => {
             const rect = res[0]
             this.setData({ swiperHeight: rect.height })
+        })
+    },
+    // 点击去往歌单详情
+    handleMoreClick: function () {
+        this.navigateToDetailSongPage("hotRanking")
+    },
+    handleRankingItemClick: function (event) {
+        const idx = event.currentTarget.dataset.idx
+        const rankingName = rankingMap[idx]
+        this.navigateToDetailSongPage(rankingName)
+    },
+    navigateToDetailSongPage: function (rankingName) {
+        wx.navigateTo({
+            url: `/pages/detail-songs/index?ranking=${rankingName}`,
         })
     },
 
