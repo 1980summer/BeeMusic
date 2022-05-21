@@ -1,0 +1,46 @@
+.nav-bar {
+    display: flex;
+    height: 44px;
+    text-align: center;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120rpx;
+}
+
+/* 插槽里如果有内容则不显示 */
+.left-arrow {
+    display: none;
+}
+
+/* 当 left-slot 为空，才展示left-arrow  */
+.left-slot:empty+.left-arrow {
+    display: block;
+}
+
+/* 逻辑同上 */
+.center-title {
+    display: none;
+}
+
+.center-slot:empty+.center-title {
+    display: block;
+}
+
+
+
+.left .left-arrow .icon {
+    width: 30px;
+    display: block;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}

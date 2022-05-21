@@ -1,0 +1,23 @@
+<view class="nav">
+    <view style="height: {{statusBarHeight}}px;"></view>
+    <view class="nav-bar">
+        <view class="left">
+            <!-- 需要注意插槽和默认view的顺序，因为在css里面写了逻辑 -->
+            <view class="left-slot">
+                <slot name="left"></slot>
+            </view>
+            <view class="left-arrow">
+                <image class="icon" mode="widthFix" src="/assets/images/icons/arrow-left.png"></image>
+            </view>
+        </view>
+        <view class="center">
+            <!-- 插槽 -->
+            <view class="center-slot">
+                <slot name="title"></slot>
+            </view>
+            <view class="center-title">{{title}}</view>
+
+        </view>
+        <view class="right">右边</view>
+    </view>
+</view>
