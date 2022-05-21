@@ -15,6 +15,32 @@
 
 <!-- 3 内容 -->
 <swiper class="content" style="height: {{contentHeight}}px;" bindchange="handleSwiperChange">
-    <swiper-item>1</swiper-item>
-    <swiper-item>2</swiper-item>
+    <swiper-item class="music">
+        <view class="album">
+            <image class="imgae" mode="widthFix" src="https://p2.music.126.net/hexeB7rT6VUVezSMYbF9tA==/19072128695650801.jpg"></image>
+        </view>
+        <view class="info">
+            <view class="title">Lust For Life</view>
+            <view class="subtitle">
+                <view class="singer">Lana-Del-Ray</view>
+                <view class="alias">专辑：《Lust For Life》</view>
+            </view>
+        </view>
+        <view class="lyric">我是歌词歌词，哈哈哈</view>
+        <view class="progress">
+            <slider class="slider" block-size="{{12}}"></slider>
+            <view class="time">
+                <view class="current">01:22</view>
+                <view class="duration">03:22</view>
+            </view>
+        </view>
+        <view class="operation">
+            <image class="btn btn-mode" src="/assets/images/player/play_order.png"></image>
+            <image class="btn btn-prev" src="/assets/images/player/play_prev.png"></image>
+            <image class="btn btn-pause" src="/assets/images/player/play_pause.png"></image>
+            <image class="btn btn-next" src="/assets/images/player/play_next.png"></image>
+            <image class="btn btn-music" src="/assets/images/player/play_music.png"></image>
+        </view>
+    </swiper-item>
+    <swiper-item class="lyric">2</swiper-item>
 </swiper>
