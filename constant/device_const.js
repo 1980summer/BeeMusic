@@ -1,0 +1,1 @@
+export const NavBarHeight = 44  //这个常量是最顶的导航栏的高度，就是显示时间和电量那一部分

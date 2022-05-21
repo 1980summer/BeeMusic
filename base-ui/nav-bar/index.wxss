@@ -1,6 +1,5 @@
 .nav-bar {
     display: flex;
-    height: 44px;
     text-align: center;
 }
 

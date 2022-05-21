@@ -1,6 +1,6 @@
 <view class="nav">
     <view style="height: {{statusBarHeight}}px;"></view>
-    <view class="nav-bar">
+    <view class="nav-bar" style="height: {{navBarHeight}}px;">
         <view class="left">
             <!-- 需要注意插槽和默认view的顺序，因为在css里面写了逻辑 -->
             <view class="left-slot">
@@ -18,6 +18,6 @@
             <view class="center-title">{{title}}</view>
 
         </view>
-        <view class="right">右边</view>
+        <view class="right"></view>
     </view>
 </view>

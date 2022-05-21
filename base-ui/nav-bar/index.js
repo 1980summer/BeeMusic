@@ -1,3 +1,5 @@
+import { NavBarHeight } from "../../constant/device_const";
+
 // base-ui/nav-bar/index.js
 Component({
     // 小程序里使用多个插槽必须要配置这个选项
@@ -16,7 +18,8 @@ Component({
      */
     data: {
         // 在全局获取数据
-        statusBarHeight: getApp().globalData.statusBarHeight
+        statusBarHeight: getApp().globalData.statusBarHeight,
+        navBarHeight: getApp().globalData.navBarHeight
     },
 
     methods: {
